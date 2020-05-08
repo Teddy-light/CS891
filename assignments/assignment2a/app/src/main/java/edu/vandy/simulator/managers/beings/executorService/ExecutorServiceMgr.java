@@ -30,12 +30,13 @@ public class ExecutorServiceMgr
      * concurrently in the ExecutorService's thread pool.
      */
     // TODO -- you fill in here.
+    List<Future<BeingCallable>> beingCallablesFutures;
 
     /**
      * The ExecutorService contains a fixed pool of threads.
      */
     // TODO -- you fill in here.
-
+    ExecutorServiceMgr executorServiceMgr = new ExecutorServiceMgr();
     /**
      * Default constructor.
      */
@@ -62,7 +63,7 @@ public class ExecutorServiceMgr
         // Return a new BeingCallable instance.
         // TODO -- you fill in here, replacing null with the
         // appropriate code.
-        return null;
+        return new BeingCallable(this);
     }
 
     /**
@@ -75,6 +76,7 @@ public class ExecutorServiceMgr
         // a pool of threads that represent the beings in this
         // simulation.
         // TODO -- you fill in here.
+//        ExecutorService()
 
         // Call a method that waits for all futures to complete.
         // TODO -- you fill in here.

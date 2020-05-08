@@ -33,7 +33,7 @@ class BeingCallable
         runGazingSimulation(getGazingIterations());
 
         // TODO -- replace "null" with the appropriate return value.
-        return null;
+        return this;
     }
 
     /**
@@ -52,5 +52,14 @@ class BeingCallable
         // a call to the appropriate base class helper method.
 
         // TODO -- you fill in here.
+        try{
+            Palantir palantir = mManager.acquirePalantir(this);
+            palantir.gaze(this);
+            this.releasePalantir(palantir);
+        } catch (Error err){
+            this.error("concurrency error");
+
+        }
+
     }
 }
